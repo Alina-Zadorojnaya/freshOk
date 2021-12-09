@@ -41,6 +41,7 @@ function images() {
 function scripts() {
     return src([
         'node_modules/jquery/dist/jquery.js'
+
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
@@ -85,4 +86,4 @@ exports.images  = images;
 exports.cleanDist = cleanDist;
 
 exports.build = series(cleanDist, images,  build);
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(styles, browsersync, watching);
