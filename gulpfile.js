@@ -40,17 +40,21 @@ function images() {
 
 function scripts() {
     return src([
+        'node_modules/slick-carousel/slick/slick.js',
         'node_modules/jquery/dist/jquery.js'
 
     ])
-    .pipe(concat('libs.min.js'))
+    .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(dest('app/js'))
     .pipe(browserSync.stream())
 }
 
 function styles() {
-    return src('app/scss/style.scss')
+    return src([
+        'node_modules/slick-carousel/slick/slick.scss',
+        'app/scss/style.scss'
+    ])
         .pipe(scss({outputStyle: 'compressed'}))
         .pipe(concat('style.min.css'))
         .pipe(autoprefixer({
@@ -86,4 +90,4 @@ exports.images  = images;
 exports.cleanDist = cleanDist;
 
 exports.build = series(cleanDist, images,  build);
-exports.default = parallel(styles, browsersync, watching);
+exports.default = parallel(styles, scripts, browsersync, watching);
