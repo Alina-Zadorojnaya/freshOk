@@ -1,0 +1,170 @@
+.footer {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__info {
+        column-count: 3;
+        column-gap: 74px;
+    }
+
+    &__logo {
+        margin-bottom: 30px;
+    }
+
+    &__list {
+        break-after: column;
+        margin-bottom: 30px;
+    }
+
+    &__form {
+        max-width: 306px;
+        width: 100%;
+        margin-right: 150px;
+    }
+
+    &__item {
+        max-width: 214px;
+        width: 100%;
+    }
+
+    &__fild {
+        padding: 12px 13px 12px 12px;
+        border-radius: 6px 0 0 6px;
+
+    }
+
+    &__btn {
+        padding: 12px 16px 10px;
+        background-color: $green-900;
+    }
+
+    &__fild:focus, 
+    &__btn:focus  {
+        box-shadow: 0 0 0 3px $green-200;
+    }
+
+    &__btn:hover {
+        background-color: #4D800C;
+    }
+
+    &__btn:active {
+        opacity: 0.5;
+    }
+    p {
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 400;
+        margin-bottom: 12px;
+    }
+
+    &__part {
+        margin-bottom: 18px;
+    }
+
+    &__link {
+        font-size: 14px;
+    }
+    &__link:hover {
+        opacity: 0.7;
+    }
+    &__link:focus {
+        box-shadow: 0 0 0 3px $green-100;
+        border-radius: 3px;
+    }
+    &__link:active {
+        color: $green-200;
+    }
+}
+
+.social {
+    display: flex;
+
+    &__item {
+        margin-left: 12px;
+
+    }
+
+    &__link {
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: block;
+        width: 32px;
+        height: 32px;
+        border-radius: 3px;
+
+        &:not(last-hild) {
+            margin-right: 12px;
+        }
+
+        &--facebook {
+            background-image: url('../images/icon/icon-fb.svg');
+
+        }
+
+        &--youtube {
+            background-image: url('../images/icon/icon-ytb.svg');
+        }
+
+        &--telegram {
+            background-image: url('../images/icon/icon-tel.svg');
+        }
+
+        &--instagram {
+            background-image: url('../images/icon/icon-insta.svg');
+        }
+    }
+
+    &__link:hover {
+
+        opacity: 0.7;
+    }
+
+    &__link:focus {
+        box-shadow: 0 0 0 3px $green-200;
+
+    }
+    &__link:active {
+        fill: $green-200;
+    }
+
+}
+
+.footer-top {
+    padding: 36px 0 42px;
+}
+
+.card {
+    border-top: 1px solid rgba(255, 255, 255, 1);
+
+    &__inner {
+        height: 77px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        &--visa {
+            background-image: url('../images/icon/icon-visa.svg');
+            width: 93px;
+            height: 29px;
+        }
+
+        &--mscard {
+            background-image: url('../images/icon/icon-master.svg');
+            width: 49px;
+            height: 29px;
+            margin-left: 25px;
+        }
+    }
+}

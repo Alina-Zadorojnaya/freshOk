@@ -40,21 +40,17 @@ function images() {
 
 function scripts() {
     return src([
-        'node_modules/slick-carousel/slick/slick.js',
-        'node_modules/jquery/dist/jquery.js'
-
+        'node_modules/jquery/dist/jquery.js',
+        'node_modules/slick-carousel/slick/slick.js'
     ])
-    .pipe(concat('main.min.js'))
+    .pipe(concat('libs.min.js'))
     .pipe(uglify())
     .pipe(dest('app/js'))
     .pipe(browserSync.stream())
 }
 
 function styles() {
-    return src([
-        'node_modules/slick-carousel/slick/slick.scss',
-        'app/scss/style.scss'
-    ])
+    return src('app/scss/style.scss')
         .pipe(scss({outputStyle: 'compressed'}))
         .pipe(concat('style.min.css'))
         .pipe(autoprefixer({
@@ -78,7 +74,7 @@ function build() {
 
 function watching() {
     watch(['app/scss/**/*.scss'], styles);
-    watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
+   // watch(['app/js/**/*.js'], scripts);
     watch(['app/*.html']).on('change', browserSync.reload);
 
 }

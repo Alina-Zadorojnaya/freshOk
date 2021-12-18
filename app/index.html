@@ -11,11 +11,10 @@
 </head>
 
 <body>
-
     <header class="header">
         <div class="header-info">
             <div class="container">
-                <ul class="header-info__list">
+                <ul class="header-info__list"> <!-- шукаю рішення як розкидать флексами список -->
                     <li class="header-info__item">
                         <a class="header-info__link" href="#">адрес и время доставки</a>
                     </li>
@@ -40,7 +39,7 @@
                     <a class="logo" href="#">
                         <img src="images/logo.svg" alt="логотип сайта">
                     </a>
-                    <button class="nav__catalog btn-mark" type="button">Каталог продуктов</button>
+                    <button class="nav__catalog btn-mark" type="menu">Каталог продуктов</button>
 
                     <form class="form">
                         <label class="form__label">
@@ -48,74 +47,189 @@
                         </label>
                         <button class="form__btn button" type="submit">поиск</button>
                     </form>
-                    <ul class="nav-user">
-                        <li class="nav-user__item">
-                            <h2 class="sr-only">входв кабинет</h2>
-                            <a href="#" class="nav-user__link"></a>
+                    <ul class="nav__user">
+                        <li class="nav__item">
+                            <button type="submit" class="nav__login nav__userbar "></button> <!-- шукаю рішення як змінити колір svg -->
                         </li>
-                        <li class="nav-user__item">
-                            <h2 class="sr-only">любимые товары</h2>
-                            <a href="#" class="nav-user__link"></a>
+                        <li class="nav__item">
+                            <button type="button" class="nav__dreambox nav__userbar"></button>
                         </li>
-                        <li class="nav-user__item">
-                            <h2 class="sr-only">корзина покупок</h2>
-                            <a href="#" class="nav-user__link"></a>
+                        <li class="nav__item">
+                            <button type="button" class="nav__basket nav__userbar"></button>
                         </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <main>
-        <section class="slider">
-            <div class="slider__item" style="background-image: url('images/content/slider-img1.png');">
-                <div class="container">
-                    <div class="slider__inner">
-                        <h1 class="slider__title">
-                            СВЕЖАЧОК ВАМ в ХАТУ <span>Скидка -50%</span>
-                        </h1>
-                        <p>Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!</p>
-                        <button class="slider__btn button" type="button">Купить сейчас</button>
+    <main class="main">
+        <section class="main-slider">
+            <ul class="main-slider__list">
+                <li class="main-slider__inner" style="background-image: url('images/content/slider-img.jpg');">
+                    <div class="container">
+                        <div class="main-slider__item">
+                            <h2 class="main-slider__title">
+                                свежачор вам в хату <span>Скидка -50%</span>
+                            </h2>
+                            <p>Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!</p>
+                            <button class="main-slider__btn button" type="button">Купить сейчас</button> <!-- шукаю рішення як змінити колір svg -->
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="slider__item" style="background-image: url('images/content/slider-img1.png');">
-                <div class="container">
-                    <div class="slider__inner">
-                        <h1 class="slider__title">
-                            СВЕЖАЧОК ВАМ в ХАТУ <span>Скидка -50%</span>
-                        </h1>
-                        <p>Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!</p>
-                        <button class="slider__btn button" type="button">Купить сейчас</button>
+                </li>
+                <li class="main-slider__inner" style="background-image: url('images/content/slider-img2.jpg');">
+                    <div class="container">
+                        <div class="main-slider__item">
+                            <h2 class="main-slider__title">
+                                накрути себе томатов <span> акция: 3 кг по цене 1</span>
+                            </h2>
+                            <p>Только с 12 по 15 июля скидка на домашние помидорчики</p>
+                            <button class="main-slider__btn button" type="button">Купить сейчас</button>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="slider__item" style="background-image: url('images/content/slider-img1.png');">
-                <div class="container">
-                    <div class="slider__inner">
-                        <h1 class="slider__title">
-                            СВЕЖАЧОК ВАМ в ХАТУ <span>Скидка -50%</span>
-                        </h1>
-                        <p>Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!</p>
-                        <button class="slider__btn button" type="button">Купить сейчас</button>
+                </li>
+                <li class="main-slider__inner" style="background-image: url('images/content/slider-img3.jpg');">
+                    <div class="container">
+                        <div class="main-slider__item">
+                            <h2 class="main-slider__title">
+                                пусть остальные позеленеют от зависти <span>распродажа зелени</span>
+                            </h2>
+                            <button class="main-slider__btn button" type="button">Купить сейчас</button>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
 
         </section>
 
-
-
-
-
-
-
+        <section class="benefits">
+            <div class="container">
+                <h3 class="sr-only">преимущества магазина</h3>
+                <ul class="benefits__inner">
+                    <li class="benefits__item">
+                        <a class="benefits__link" href="#">
+                            <h4 class="benefits__title">Бесплатная доставка</h4>
+                            <p>Для заказов на сумму от 500 ₽</p>
+                        </a>
+                    </li>
+                    <li class="benefits__item ">
+                        <a class="benefits__link" href="#">
+                            <h4 class="benefits__title">Возврат товара</h4>
+                            <p>Если товары были испорчены</p>
+                        </a>
+                    </li>
+                    <li class="benefits__item">
+                        <a class="benefits__link" href="#">
+                            <h4 class="benefits__title">Поддержка 24/7</h4>
+                            <p>Лучшие операторы</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
 
     </main>
 
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <h3 class="sr-only">футер сайта</h3>
+                <a class="logo footer__logo" href="#">
+                    <img src="images/logo.svg" alt="логотип сайта">
+                </a>
+                <div class="footer__inner">
+    
+                        <form class="footer__form">
+                            <p>Следите за нашими акциями</p>
+                            <label class="footer__label">
+                                <input class="footer__fild" type="email" name="email" placeholder="email@email.com"
+                                    required>
+                            </label>
+                            <button class="footer__btn button" type="submit">подписаться</button>
+                        </form>
+                  
+                    <div class="footer__info">
+                        <ul class="footer__list">
+                            <li class="footer__part">
+                                <a class="footer__link" href="#">О нас</a>
+                            </li>
+                            <li class="footer__part">
+                                <a class="footer__link" href="#">Контакты</a>
+                            </li>
+                            <li class="footer__part">
+                                <a class="footer__link" href="#">Публичная оферта</a>
+                            </li>
+                        </ul>
+                        <ul class="footer__list">
+                            <li class="footer__part">
+                                <a class="footer__link" href="#">Оплата и доставка</a>
+                            </li>
+                            <li class="footer__part">
+                                <a class="footer__link" href="#">Вакансии</a>
+                            </li>
+                            <li class="footer__part">
+                                <a class="footer__link" href="#">Акции</a>
+                            </li>
+                        </ul>
+                        <ul class="footer__list">
+                            <li class="footer__part">
+                                <a class="footer__link" href="#">Отзывы</a>
+                            </li>
+                            <li class="footer__part">
+                                <a class="footer__link" href="#">Новости</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__item">
+                        <address class="footer__adress">
+                            <ul class="footer__item">
+                                <li class="footer__part">
+                                    <a class="footer__link" href="tel:+7907288365">Горячая линия +7 907 288 365</a>
+                                </li>
+                                <li class="footer__part">
+                                    <a class="footer__link"
+                                        href="https://www.google.com/maps/place/%D1%83%D0%BB.+%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0,+1,+%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3,+%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB.,+%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F,+196626/@59.9583088,30.3090314,17z/data=!3m1!4b1!4m5!3m4!1s0x46963143e097571b:0xa74e8711fe628bd5!8m2!3d59.9583088!4d30.3112201">Санкт-Петербург,
+                                        ул. Ленина, 1</a>
+                                </li>
+                            </ul>
+                        </address>
+                        <ul class="footer__social social">
+                            <li class="social__item">
+                                <a class="social__link social__link--facebook" href=""></a> <!-- шукаю рішення як змінити колір svg -->
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link social__link--youtube" href=""></a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link social__link--telegram" href=""></a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link social__link--instagram" href=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__page card">
+            <div class="container">
+                <div class="card__inner">
+                    <p>© 2021 ФРЕШОК</p>
+                    <ul class="card__list">
+                        <li class="card__item">
+                            <a class="card__link card__item--visa" href=""></a>
+                        </li>
+                        <li class="card__item card__item--mscard ">
+                            <a class="card__link" href=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-   <script src="js/libs.min.js"></script>
+    <script src="js/libs.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
