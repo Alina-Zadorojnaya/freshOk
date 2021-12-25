@@ -10,7 +10,8 @@
     }
 
     &__logo {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+        display: inline-block;
     }
 
     &__list {
@@ -19,7 +20,7 @@
     }
 
     &__form {
-        max-width: 306px;
+        max-width: 230px;
         width: 100%;
         margin-right: 150px;
     }
@@ -29,34 +30,39 @@
         width: 100%;
     }
 
-    &__fild {
-        padding: 12px 13px 12px 12px;
+    &__field {
+        padding: 10px;
         border-radius: 6px 0 0 6px;
+        max-width: 177px;
+
+        &:focus {
+            box-shadow: 0 0 0 3px $green-200;
+        }
 
     }
 
     &__btn {
-        padding: 12px 16px 10px;
+        padding: 12px 16px 12px;
         background-color: $green-900;
+        position: absolute;
+        transition: background-color, opacity;
+        transition-duration: 0.5s, 0.7s;
+        font-size: 12px;
+        &:hover {
+            background-color: #4D800C;
+        }
+    
+        &:active {
+            opacity: 0.7;
+        }
     }
 
-    &__fild:focus, 
-    &__btn:focus  {
-        box-shadow: 0 0 0 3px $green-200;
-    }
 
-    &__btn:hover {
-        background-color: #4D800C;
-    }
-
-    &__btn:active {
-        opacity: 0.5;
-    }
     p {
         font-size: 14px;
         line-height: 1;
         font-weight: 400;
-        margin-bottom: 12px;
+        margin-bottom: 20px;
     }
 
     &__part {
@@ -65,24 +71,31 @@
 
     &__link {
         font-size: 14px;
+        transition: color, opacity, box-shadow;
+        transition-duration: 0.4s, 0.7s, 0.5s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 3px $green-100;
+            border-radius: 3px;
+        }
+
+        &:active {
+            color: $green-200;
+        }
     }
-    &__link:hover {
-        opacity: 0.7;
-    }
-    &__link:focus {
-        box-shadow: 0 0 0 3px $green-100;
-        border-radius: 3px;
-    }
-    &__link:active {
-        color: $green-200;
-    }
+
+
 }
 
 .social {
     display: flex;
 
     &__item {
-        margin-left: 12px;
+        margin-left: 5px;
 
     }
 
@@ -93,53 +106,37 @@
         width: 32px;
         height: 32px;
         border-radius: 3px;
+        transition: color, opacity, box-shadow;
+        transition-duration: 0.4s, 0.7s, 0.5s;
 
-        &:not(last-hild) {
-            margin-right: 12px;
+        &:not(:last-child) {
+            margin-right: 5px;
         }
 
-        &--facebook {
-            background-image: url('../images/icon/icon-fb.svg');
-
+        &:focus {
+            box-shadow: 0 0 0 3px $green-200;
+        } 
+        &:hover {
+            opacity: 0.7;
         }
 
-        &--youtube {
-            background-image: url('../images/icon/icon-ytb.svg');
-        }
+       /* &:active {
+            
+        }*/
 
-        &--telegram {
-            background-image: url('../images/icon/icon-tel.svg');
-        }
-
-        &--instagram {
-            background-image: url('../images/icon/icon-insta.svg');
-        }
-    }
-
-    &__link:hover {
-
-        opacity: 0.7;
-    }
-
-    &__link:focus {
-        box-shadow: 0 0 0 3px $green-200;
-
-    }
-    &__link:active {
-        fill: $green-200;
     }
 
 }
 
 .footer-top {
-    padding: 36px 0 42px;
+    padding: 32px 0 42px;
 }
 
-.card {
+.payment {
     border-top: 1px solid rgba(255, 255, 255, 1);
 
     &__inner {
-        height: 77px;
+        height: 60px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -149,22 +146,22 @@
         }
     }
 
-    &__list {
+    &__info {
         display: flex;
     }
 
     &__item {
-        &--visa {
+        &:first-child {
             background-image: url('../images/icon/icon-visa.svg');
             width: 93px;
             height: 29px;
         }
 
-        &--mscard {
+        &:nth-child(2) {
             background-image: url('../images/icon/icon-master.svg');
-            width: 49px;
+            width: 45px;
             height: 29px;
-            margin-left: 25px;
+            margin-left: 20px;
         }
     }
 }
