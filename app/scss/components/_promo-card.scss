@@ -1,0 +1,10 @@
+.promo-card {
+    padding: 72px 0;
+    background-color: $silver-200;
+
+    .product-card {
+        &__content {
+            display: flex;
+        }
+    }
+}

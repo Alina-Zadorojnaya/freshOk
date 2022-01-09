@@ -1,4 +1,8 @@
 .footer {
+
+    &__top {
+        padding: 32px 0 42px;
+    }
     &__inner {
         display: flex;
         justify-content: space-between;
@@ -94,11 +98,6 @@
 .social {
     display: flex;
 
-    &__item {
-        margin-left: 5px;
-
-    }
-
     &__link {
         background-size: cover;
         background-repeat: no-repeat;
@@ -128,9 +127,7 @@
 
 }
 
-.footer-top {
-    padding: 32px 0 42px;
-}
+
 
 .payment {
     border-top: 1px solid rgba(255, 255, 255, 1);
@@ -140,12 +137,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        p {
-            font-size: 14px;
-        }
     }
 
+    &__text {
+        font-size: 14px;
+        text-transform: uppercase;
+    }
     &__info {
         display: flex;
     }
@@ -153,15 +150,21 @@
     &__item {
         &:first-child {
             background-image: url('../images/icon/icon-visa.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
             width: 93px;
             height: 29px;
+            margin-right: 24px;
         }
 
         &:nth-child(2) {
             background-image: url('../images/icon/icon-master.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
             width: 45px;
             height: 29px;
-            margin-left: 20px;
         }
     }
 }
