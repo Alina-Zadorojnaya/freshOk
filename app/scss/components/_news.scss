@@ -1,0 +1,97 @@
+.our-news {
+    padding-bottom: 72px;
+ 
+    .title {
+        text-align: left;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    &__content {
+        position: relative;
+    }
+
+    &__item {
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+        border-radius: 6px;
+        max-width: 410px;
+        width: 100%;
+        position: relative;
+    }
+    &__img {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        object-fit: cover;
+    }
+    &__text {
+        padding: 9px 18px 16px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.5;
+        color: $dark-900;
+        letter-spacing: 0;
+        transition: color 0.4s;
+        &:hover {
+            color: $green-900;
+        }
+    }
+    &__date {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        text-align: center;
+        border-radius: 0 0 4px 4px;
+        background-color: $white;
+        color: $dark-900;
+        letter-spacing: 0.1em;
+        padding: 12px 5px 4px 6px;
+        text-transform: uppercase;
+        font-size: 10px;
+        max-width: 65px;
+        width: 100%;
+        span{
+            font-size: 30px;
+            font-weight: 600;
+            display: block;
+        }
+        
+    }
+    &__btn {
+        position: absolute;
+        text-transform: uppercase;
+        color: $green-900;
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 5px;
+        margin-right: 5px;
+        border-radius: 3px;
+        top:-70px;
+        right: 0px;
+        transition: color 0.5s, box-shadow 0.5s, background-color 0.5s;
+        &::before {
+            content: '';
+            position: absolute;
+            background-color: $green-900;
+            bottom: 0;
+            right: 0;
+            height: 2px;
+            width: 100%;
+        }
+        &:focus {
+            box-shadow: 0px 0px 0px 3px #E0EDCF;
+
+        }
+        &:hover {
+            color: #4D800C;
+        }
+        &:active{
+            &::before {
+                background-color: $green-200;
+            }
+        }
+    }
+}

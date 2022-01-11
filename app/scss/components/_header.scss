@@ -83,6 +83,7 @@
     &__inner {
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
     &__catalog {
@@ -144,7 +145,7 @@
     }
     &__item {
         &:not(:first-child) {
-            margin-left: 15px;
+            margin-left: 10px;
         }
     }
    
@@ -153,7 +154,7 @@
         width: 50px;
         height: 50px;
         border-radius: 3px;
-        transition: box-shadow, background-color, opacity;
+        transition-property: box-shadow, background-color, opacity;
         transition-duration: 0.5s, 0.4s, 0.5s;
         &::before {
             content: '';
@@ -229,8 +230,9 @@
     width: 100%;
     display: flex;
     align-items: center;
-    margin-right: 30px;
+    margin-right: 50px;
     position: relative;
+    flex-wrap: 1;
     &__label {
         width: 100%;
         &::after {
@@ -275,6 +277,8 @@
         padding: 16px 50px;
         background-color: $dark-800;
         border: none;
+        transition-property: background-color, box-shadow, opacity;
+        transition-duration: 0.4s, 0.6s, 0.7s;
     }
 
     &__btn:hover {

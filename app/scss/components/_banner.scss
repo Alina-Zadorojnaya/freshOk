@@ -11,13 +11,12 @@
         }
         &:first-child {
             color: $white;
-
         }
     }
     &__conteiner {
         background-repeat: no-repeat;
         background-size: auto;
-        padding: 79px  33px 87px;
+        padding: 79px  31px;
     }
 
     &__title {
@@ -39,7 +38,7 @@
         display: inline-block;
         position: relative;
         padding-bottom: 6px;
-        &::before {
+        &:before {
             content: '';
             position: absolute;
             width: 100%;
@@ -47,5 +46,11 @@
             background-color: #000000;
             bottom: 0;
         }
+        &--white {
+            &::before{
+              background-color: $white;  
+            }
+        }
+       
     }
 }

@@ -21,6 +21,7 @@
     }
     &__text {
         margin: 12px 0 32px;
+        letter-spacing: 0;
     }
 
     &__title {
@@ -39,27 +40,6 @@
         span {
             color: $red-900;
 
-        }
-    }
-
-    &__btn {
-        padding: 10px 20px;
-        display: inline-block;
-        color: $white;
-        background-color: $green-900;
-        font-size: 18px;
-        line-height: 1.3;
-        border-radius: 6px;
-        text-transform: none;
-        transition: box-shadow 0.4s, background-color 0.5s;
-        &:focus {
-            box-shadow: 0 0 0 4px #E0EDCF;
-        }
-        &:hover {
-            background-color: #4D810C;
-        }
-        &:active {
-            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         }
     }
 

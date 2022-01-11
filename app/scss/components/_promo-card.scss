@@ -1,10 +1,92 @@
 .promo-card {
     padding: 72px 0;
     background-color: $silver-200;
+    text-align: center;
 
+    .navigation-mix {
+        &__item {
+            &:not(:last-child) {
+                margin-right: 30px ;
+            }
+        }
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+    }
+    &__item {
+        border: 1px solid $silver-600;
+        border-radius: 6px;
+        background-color: $white;
+        margin-bottom: 30px;
+        max-width: 300px;
+        width: 100%;
+        transition: border 0.4s;
+        &:hover {
+            border: 1px solid $green-900;
+        }
+    }
+ 
     .product-card {
+        padding: 13px 12px 4px;
+        &__caption {
+            margin: 0px -5px 4px;
+            padding: 0 8px 0 13px;
+            width: 100%;
+        }
         &__content {
             display: flex;
+            align-items: flex-end;
+           
+        }
+        &__link {
+            margin-bottom: 0;
+            max-width: 100px;
+            width: 100%;
+            &::after,
+            &::before {
+                display: none;
+            }
+        }
+        &__images {
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+       
+        &__availability {
+            display: block;
+    
+        }
+        &__badges {
+            top: 6px;
+            left: 12px;
+            z-index: 6;
+        }
+        &__price {
+            align-items: end; 
+            display: flex;
+        }
+        &__box {
+          font-weight: 600;
+          font-size: 20px;
+          &--old {
+            font-size: 12px;
+            font-weight: normal;
+            margin-left: 12px;
+            order: 1;
+        }
+        span {
+            font-size: 14px;
+        }
+        }
+       
+
+       
+        .reiting {
+            display: block;
         }
     }
 }
