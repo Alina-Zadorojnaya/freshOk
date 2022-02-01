@@ -1,5 +1,8 @@
-.slider-brends {
+.slider-brend {
     padding: 72px 0;
+    @include r($sm) {
+        padding: 40px 0 45px;
+    }
     &__inner {
         display: flex;
     }

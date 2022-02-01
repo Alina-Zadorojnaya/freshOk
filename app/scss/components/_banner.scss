@@ -1,55 +1,149 @@
-.banner {
+.banner-promo {
     padding-bottom: 69px;
+    @include r($sm) {
+        padding-bottom: 35px;
+    }
 
     &__inner {
         display: flex;
+        @include r($lg) {
+           flex-wrap: wrap;
+           justify-content: center;
+        }
 
     }
     &__item {
+ 
+        @include r($lg) {
+            width: 100%;
+            margin-bottom: 15px;
+        }
         &:not(:last-child) {
             margin-right: 30px;
+            @include r($lg) {
+                margin-right: 0;
+            }
         }
         &:first-child {
             color: $white;
+            max-width: 630px;
+            width: 100%;
+            @include r($md) {
+                max-width: 100%;
+            }
+          
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+            max-width: 300px;
+            width: 100%;
+            @include r($md) {
+                max-width: 100%;
+               
+            }
+        }
+        &:nth-child(2) {
+            @include r($lg){
+                margin-right: 15px; 
+            }
+            @include r($md) {
+                margin-right: 0;
+            }
+        }
+        &:nth-child(3) {
+            @include r($lg){
+                margin-left: 15px; 
+            }
+            @include r($md) {
+                margin-left: 0;
+            }
         }
     }
-    &__conteiner {
+    &__container {
         background-repeat: no-repeat;
         background-size: auto;
-        padding: 79px  31px;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        padding: 75px  31px;
+        border-radius: 6px;
+        transition: padding 0.5s;
+        @include r($xl) {
+            padding: 75px 15px;
+        }
+        @include r($md) {
+            flex-direction: column;
+            justify-content: start;
+        }
+        @include r($sm){
+            min-height: 300px;
+            padding: 76px 15px 30px;
+        }
     }
-
+    &__subtitle{
+        font-family: 'Open Sans', sans-serif;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 12px;
+        line-height: 1;
+        display: block;
+        font-weight: 700;
+    }
     &__title {
         font-weight: 600;
         font-size: 30px;
         text-transform: uppercase;
         font-family: 'Ruda', sans-serif;
         margin-bottom: 6px;
-        span {
-            font-family: 'Open Sans', sans-serif;
-            margin-bottom: 18px;
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            line-height: 1;
-            display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -moz-box;
+        -moz-box-orient: vertical;
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        transition: font-size 0.4s;
+      
+        @include r($xl) {
+            font-size: 24px;
         }
+        @include r($sm) {
+            flex-grow: 1;
+        }
+       span{
+           display: block;
+          
+       }
     }
     &__btn {
-        display: inline-block;
+        max-width: 166px;
         position: relative;
         padding-bottom: 6px;
-        &:before {
+        transition:  0.3s;
+       &:before {
             content: '';
             position: absolute;
             width: 100%;
             height: 2px;
             background-color: #000000;
             bottom: 0;
+            transition: 0.3s;
         }
         &--white {
             &::before{
               background-color: $white;  
             }
+        }
+        &:focus {
+            box-shadow: 0px 0px 0px 4px $green-200;
+            border-radius: 3px; 
+            
+        }
+        &:hover::before {
+            background-color: $green-900;
+            
         }
        
     }

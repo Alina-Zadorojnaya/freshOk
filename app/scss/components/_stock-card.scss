@@ -1,7 +1,11 @@
-.promo-card {
+.stock-card {
     padding: 72px 0;
     background-color: $silver-200;
     text-align: center;
+
+    @include r($sm) {
+        padding: 48px 0;
+    }
 
     .navigation-mix {
         &__item {
@@ -12,9 +16,10 @@
     }
     &__inner {
         display: flex;
-        justify-content: space-between;
+        gap: 0px 30px;
         flex-wrap: wrap;
         margin-bottom: 18px;
+        justify-content: center;
     }
     &__item {
         border: 1px solid $silver-600;
@@ -24,6 +29,9 @@
         max-width: 300px;
         width: 100%;
         transition: border 0.4s;
+        @include r($sm) {
+            margin-bottom: 15px;
+        }
         &:hover {
             border: 1px solid $green-900;
         }
@@ -41,6 +49,14 @@
             align-items: flex-end;
            
         }
+        &__subtitle {
+            flex-grow: 1;
+            @include r($md) {
+                max-width: 164px;
+                width: 100%;
+                margin-bottom: 0;
+            }
+        }
         &__link {
             margin-bottom: 0;
             max-width: 100px;
@@ -54,12 +70,12 @@
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
+            @include r($sm) {
+                width: 100px;
+                height: 75px;
+            } 
         }
        
-        &__availability {
-            display: block;
-    
-        }
         &__badges {
             top: 6px;
             left: 12px;
@@ -82,11 +98,37 @@
             font-size: 14px;
         }
         }
-       
-
-       
-        .reiting {
-            display: block;
+        
+        &__availability {
+            text-align: left;
+            margin-bottom: 5px;
+        }
+   
+    }
+    .rating {
+        font-weight: bold;
+        font-size: 14px;
+        padding-right: 20px;
+        width: 38px;
+        height: 16px;
+        margin-bottom: 3px;
+        position: relative;
+    
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url('../images/icon/reiting-icon.svg');
+            background-image: url(../images/icon/reiting-icon.svg);
+            width: 16px;
+            height: 15px;
+            right: -2px;
+            bottom: 0px;
+        }
+    }
+    .button--green {
+        @include r($md) {
+            font-size: 18px;
         }
     }
 }
+

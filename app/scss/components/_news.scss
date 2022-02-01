@@ -1,5 +1,8 @@
 .our-news {
-    padding-bottom: 72px;
+    padding-bottom: 52px;
+    @include r($sm) {
+        padding-bottom: 35px;
+    }
  
     .title {
         text-align: left;
@@ -7,11 +10,15 @@
 
     &__inner {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        flex-wrap: wrap;
         
     }
     &__content {
         position: relative;
+        @include r($sm) {
+            padding-top: 35px;
+        }
     }
 
     &__item {
@@ -20,21 +27,40 @@
         max-width: 410px;
         width: 100%;
         position: relative;
+        margin: 0 5px 20px;
+        @include r($sm) {
+            margin: 0 0 14px;
+        }
     }
     &__img {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         object-fit: cover;
+        width: 100%;
+        @include r($sm) {
+            max-height: 200px;
+        }
     }
     &__text {
-        padding: 9px 18px 16px;
+        margin: 9px 18px 16px;
         font-weight: 600;
         font-size: 16px;
         line-height: 1.5;
         color: $dark-900;
-        letter-spacing: 0;
+        letter-spacing: 1;
         transition: color 0.4s;
+        white-space: inherit;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        @include r($sm) {
+            margin: 10px 0px 13px 15px;
+            font-size: 14px;
+            letter-spacing: 0;
+        }
         &:hover {
             color: $green-900;
         }
@@ -53,6 +79,9 @@
         font-size: 10px;
         max-width: 65px;
         width: 100%;
+        @include r($sm) {
+            padding: 18px 5px 4px 6px;
+        }
         span{
             font-size: 30px;
             font-weight: 600;
@@ -72,6 +101,11 @@
         top:-70px;
         right: 0px;
         transition: color 0.5s, box-shadow 0.5s, background-color 0.5s;
+        @include r($sm) {
+            top: -12px;
+            left: 0px;
+            display: inline-table;
+        }
         &::before {
             content: '';
             position: absolute;

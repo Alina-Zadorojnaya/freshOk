@@ -1,0 +1,283 @@
+
+.product-card {
+    max-width: 300px;
+    width: 100%;
+    padding: 56px 0 18px;
+    position: relative;
+    @include r($sm) {
+        padding-bottom: 10px;
+    }
+   
+    &__badges {
+        position: absolute;
+        color: $white;
+        top: 5px;
+        left: 12px;
+    }
+
+    &__status {
+        text-align: left;
+    }
+
+    &__discont {
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 1;
+        letter-spacing: 0.03em;
+        padding: 3px 6px;
+        border-radius: 6px;
+        &--green {
+            background-color: $green-900;
+        }
+    
+        &--red {
+            background-color: $red-900;
+        }
+    
+        &--orange {
+            background-color: $orange-900;
+        }
+    }
+
+   
+
+    &__favorite {
+        width: 44px;
+        height: 44px;
+        border-radius: 3px;
+        position: absolute;
+        top: 10px;
+        right: 6px;
+        transition: box-shadow 0.4s;
+        @include r($sm) {
+            width: 34px;
+            height: 34px;   
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-image: url('../images/icon/icon-catalog-favorite.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 32px;
+            height: 29px;
+            transform: translate(-50%, -50%);
+            transition: filter 0.5s;
+            @include r($sm) {
+                width: 24px;
+                height: 21px;
+               
+            }
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 3px #E0EDCF;
+        }
+
+        &:hover::before {
+            background-repeat: no-repeat;
+            background-size: contain;
+            filter: invert(59%) sepia(85%) saturate(503%) hue-rotate(1deg) brightness(106%) contrast(104%);
+        }
+    
+        &:active {
+            opacity: 0.5;
+        }
+
+    }
+   
+
+    &__link {
+        margin-bottom: 4px;
+        position: relative;
+        display: block;
+        @include r($sm) {
+            margin-bottom: 2px;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            transition-property: opacity;
+            transition-duration: 0.7s;
+            opacity: 0;
+        }
+
+        &::before {
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        &::after {
+            background-color: $white;
+            background-image: url('../images/icon/catalog-search.svg');
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-position: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover::before,
+        &:hover::after {
+            opacity: 1;
+        }
+    }
+
+    &__images {
+        max-width: 300px;
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        @include r($md) {
+            max-width: 260px;
+            height: auto;
+        }
+        @include r($sm) {
+            max-width: 168px;
+            height: 126px;
+        }
+    }
+
+    &__caption {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 18px 0;
+        min-height: 100px;
+        color: $dark-900;
+        position: relative;
+        @include r($sm) {
+            padding: 0 8px 0;
+        }
+    }
+
+    &__subtitle {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 0 0 10px;
+        text-align: left;
+        max-width: 264px;
+        width: 100%;
+        letter-spacing: 0.03em;
+        @include r($md) {
+            max-width: 224px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+    }
+    &__text {
+        white-space: inherit;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+       
+        
+    }
+
+
+    &__stock {
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 600;
+
+        &--green {
+            color: $green-900;
+        }
+
+        &--red {
+            color: $red-900;
+        }
+
+        &--grey {
+            color: $silver-600;
+        }
+    }
+
+    &__price {
+        line-height: 1;
+        font-size: 14px;
+        letter-spacing: 0.03em;
+
+    }
+
+    &__box {
+        color: $dark-500;
+        &--old {
+            position: relative;
+            color: #c1c1c1;
+            display: inline-block;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                bottom: 8px;
+                background-color: #c1c1c1;
+                transform: rotate(-15deg);
+            }
+
+        }
+    }
+
+
+    &__basket {
+        width: 32px;
+        height: 32px;
+        background-color: $green-900;
+        border-radius: 3px;
+        position: relative;
+        transition: background-color 0.6s;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url('../images/icon/basket.svg');
+            width: 16px;
+            height: 16px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition-property: opacity;
+            transition-duration: 0.4s;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 4px #E0EDCF;
+        }
+
+        &:hover {
+            background-color: #4D800C;
+        }
+
+        &:active {
+            opacity: 0.5;
+        }
+
+
+    }
+
+}
