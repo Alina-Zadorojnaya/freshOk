@@ -1,0 +1,28 @@
+.breadcrumb {
+    background-color: $silver-100;
+
+    &__list {
+        display: flex;
+        padding: 26px 0;
+        color: $dark-500;
+        font-size: 14px;
+        line-height: 1.2;
+    }
+    &__item:not(:last-child) {
+        margin-right: 8px;
+        padding-right: 8px ;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            background-image: url('../images/icon/chevron.svg');
+            width: 8px;
+            height: 16px;
+            top: 4px;
+            right: -4px;
+            background-repeat: no-repeat;
+        }
+       
+    }
+  
+}

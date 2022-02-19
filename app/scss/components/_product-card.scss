@@ -138,9 +138,7 @@
     &__images {
         max-width: 300px;
         width: 100%;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+       object-fit: contain;
         @include r($md) {
             max-width: 260px;
             height: auto;
@@ -180,12 +178,7 @@
 
     }
     &__text {
-        white-space: inherit;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
+        @include line-clamp(3);
     }
     &__bottom {
         display: flex;
@@ -200,6 +193,7 @@
         text-transform: uppercase;
         font-size: 10px;
         font-weight: 600;
+        @include line-clamp(1);
 
         &--green {
             color: $green-900;
@@ -218,7 +212,7 @@
         line-height: 1;
         font-size: 14px;
         letter-spacing: 0.03em;
-
+        @include line-clamp(1);
     }
 
     &__box {

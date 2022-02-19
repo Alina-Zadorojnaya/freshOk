@@ -1,46 +1,70 @@
-.mobail.active {
+.mobile-menu.active {
     left: 0;
 }
-.mobail{
-     max-width: 300px;
-     background-color: $white;
-     padding: 26px 0px 24px;
-     color: $dark-900;
-     font-size: 18px;
-     line-height: 1.2;
-     border: 1px solid #EBEBEB;
-     position: absolute;
-     overflow-x: hidden;
-     top: 0;
-     left: -100%;
-     z-index: 6;
-     transition: 0.5s;
-  
-     &__btn {
-         width: 18px;
-         height: 18px;
-         position: absolute;
-         top: 47px;
-         right: 26px;
-         &::before {
-             content: '';
-             position: absolute;
-             width: 18px;
-             bottom: 0;
-             left: 0;
-             border: 1px solid $dark-900;
-             transform: rotate(-42deg);
-         }
-         &::after {
-            content: '';
-            position: absolute;
-            width: 18px;
-            bottom: 0;
-            left: 0;
-            border: 1px solid $dark-900;
-            transform: rotate(45deg);
+
+.mobile-menu {
+    max-width: 300px;
+    background-color: $white;
+    padding: 26px 25px 24px 0;
+    color: $dark-900;
+    font-size: 18px;
+    line-height: 1.2;
+    border: 1px solid #EBEBEB;
+    position: absolute;
+    overflow-x: hidden;
+    top: 0;
+    left: -100%;
+    z-index: 6;
+    transition: 0.5s;
+
+    &__account {
+        background-color: $green-900;
+        color: $white;
+        line-height: 1;
+        display: flex;
+        padding: 15px;
+
+        &__user {
+            letter-spacing: 0.03em;
+            font-weight: 400;
+
+            &:focus {
+                box-shadow: 0 0 0 4px rgba(99, 166, 14, 0.5);
+            }
+
+            &:hover {
+                color: $green-200;
+            }
+
+            &--login {
+                padding-left: 40px;
+                margin-right: 20px;
+                position: relative;
+                transition-property: box-shadow, color, opacity;
+                transition-duration: 0.4s, 0.5s, 0.4s;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    background-image: url('../images/icon/user.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 25px;
+                    height: 32px;
+                    top: -5px;
+                    left: 0;
+                }
+
+            }
+
+            &--registr {
+                padding-left: 20px;
+                border-left: 2px solid $white;
+            }
         }
     }
+
     .logo {
         display: block;
         max-width: 200px;
@@ -48,6 +72,7 @@
         margin-left: 15px;
         margin-bottom: 20px;
     }
+
     &__catalog {
         color: $dark-900;
         padding: 15px 15px 15px 55px;
@@ -61,16 +86,18 @@
 
         &:focus {
             box-shadow: 0 0 0 3px $green-100;
-         }
+        }
 
         &:hover {
             background-color: $green-200;
-            border-radius: 3px ;
+            border-radius: 3px;
             color: $green-900;
         }
+
         &:hover::before {
             filter: invert(64%) sepia(36%) saturate(7475%) hue-rotate(54deg) brightness(100%) contrast(88%);
         }
+
         &::before {
             content: '';
             position: absolute;
@@ -85,43 +112,54 @@
 
         }
     }
+
     &__info {
         padding: 22px 15px;
 
     }
+
     &__link {
         border-radius: 3px;
         transition-property: box-shadow, color, border-bottom;
         transition-duration: 0.4s, 0.3s, 0.4s;
+        display: block;
+        padding: 10px 50px 10px 10px;
         &:focus {
             box-shadow: 0px 0px 0px 3px #E0EDCF;
         }
+
         &:hover {
             color: $green-900;
         }
+
         &:active {
             border-bottom: 2px solid $green-100;
         }
     }
+
     &__contact {
         padding-left: 40px;
         margin-bottom: 18px;
         border-radius: 3px;
         display: inline-block;
         transition: 0.4s;
+
         &:focus {
             box-shadow: 0px 0px 0px 3px #E0EDCF;
         }
+
         &:hover {
             color: $green-900;
         }
+
         &:hover::before {
             filter: invert(64%) sepia(36%) saturate(7475%) hue-rotate(54deg) brightness(100%) contrast(88%);
         }
+
         &--phone {
             position: relative;
             background-repeat: no-repeat;
-           
+
             &::before {
                 content: '';
                 position: absolute;
@@ -129,14 +167,15 @@
                 width: 24px;
                 height: 25px;
                 left: 0;
-                top: 0; 
+                top: 0;
             }
         }
+
         &--address {
             position: relative;
             background-repeat: no-repeat;
-           
-            &::before{
+
+            &::before {
                 content: '';
                 position: absolute;
                 background-image: url('../images/icon/vector.svg');
@@ -144,66 +183,23 @@
                 height: 33px;
                 left: 0;
                 top: 0;
-            } 
+            }
         }
-        
-    
+
+
     }
 
-    .footer__social {
+    .mobile-menu__social {
         justify-content: start;
         border-bottom: 1px solid rgba(193, 193, 193, 0.3);
         padding-bottom: 24px;
     }
-    &__menu {
+
+    &__list {
         padding-left: 15px;
     }
+
     &__item {
         margin-bottom: 15px;
     }
-  
 }
-
-.account {
-    background-color: $green-900;
-    color: $white;
-    line-height: 1;
-    display: flex;
-    padding: 15px;
-        &__user {
-            letter-spacing: 0.03em;
-            font-weight: 400;
-            &:focus {
-                box-shadow: 0 0 0 4px rgba(99, 166, 14, 0.5);
-            }
-            &:hover {
-                color: $green-200;
-            }
-            &--login {
-            padding-left: 40px;
-            margin-right:20px ;
-            position: relative;
-            transition-property: box-shadow, color, opacity;
-            transition-duration: 0.4s, 0.5s, 0.4s;
-            
-            &::before {
-                content: '';
-                position: absolute;
-                background-image: url('../images/icon/user.svg');
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-                width: 25px;
-                height: 32px;
-                top: -5px;
-                left: 0;
-            }
-            
-        }
-        &--registr {
-            padding-left: 20px;
-            border-left: 2px solid $white;
-        }
-    }
-}
- 

@@ -57,6 +57,9 @@
                 margin-bottom: 0;
             }
         }
+        &__title {
+            @include line-clamp(3);
+        }
         &__link {
             margin-bottom: 0;
             max-width: 100px;
@@ -67,9 +70,7 @@
             }
         }
         &__images {
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
+           object-fit: cover;
             @include r($sm) {
                 width: 100px;
                 height: 75px;

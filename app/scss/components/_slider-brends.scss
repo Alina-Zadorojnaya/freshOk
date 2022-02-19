@@ -6,6 +6,10 @@
     &__inner {
         display: flex;
     }
+
+    &__images {
+        object-fit: contain;
+    }
   
     .slick-slider img {
        vertical-align: middle;

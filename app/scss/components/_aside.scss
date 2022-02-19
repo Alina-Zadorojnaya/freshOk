@@ -1,0 +1,215 @@
+.aside {
+    display: inline-block;
+    max-width: 300px;
+    width: 100%;
+    &__inner {
+        border: 1px solid $silver-600;
+        border-radius: 6px;
+        max-width: 300px;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+   &__box {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       border-bottom: 1px solid $silver-600;
+       
+   }
+    &__subtitle {
+        font-family: 'Ruda', sans-serif;
+        font-size: 24px;
+        letter-spacing: 0.03em;
+        line-height: 1.2;
+        font-weight: normal;
+        text-transform: capitalize;
+        padding: 18px 24px 18px 18px;
+      
+    }
+    &__arrow {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin-right: 8px;
+        transition: transform 0.3s ease;
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url('../images/icon/chevron-aside.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 18px;
+            height: 11px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &--active {
+            transform: scaleY(-1);
+        }
+    }
+   
+    &__list {
+        padding-top: 12px;
+        max-height: 290px;
+        overflow: scroll;
+        transition: height 0.4s ;
+        &::-webkit-scrollbar{
+             width: 3px;  
+        }
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }  
+        &::-webkit-scrollbar-thumb {
+            background-color: $silver-600;
+            border-radius: 3px;
+            max-height: 50px;
+        }  
+        [type="checkbox"] {
+            display: none;
+        }
+    } 
+    .active {
+        height: 0;
+        padding-top: 0;
+    }   
+    
+    &__item {
+        padding: 6px 18px;
+        transition: 0.3s ease-in;
+        position: relative;
+        &:focus {
+            box-shadow: 0px 0px 0px 3px #E0EDCF;
+        }
+        &:hover {
+            color: $green-900;
+        }
+
+        &:hover::before {
+            content: '';
+            position: absolute;
+            color: $green-900;
+            width: 3px;
+            height: 30px;
+            background-color: $green-900;
+            left: -1px;
+            
+        }
+    }
+
+    &__link {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+    
+    &__checked-item {
+        &:not(:last-child){
+          margin-bottom: 15px;  
+        }
+       padding-left:18px ;
+    }
+    &__label {
+        font-size: 18px;
+        line-height: 0.03em;
+        display: flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        z-index: 1;
+        transition: border 0.4s, opacity 0.5s;
+       &:hover::before {
+        border: 1px solid #505050;
+       }
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            flex-grow: 0;
+            border: 1px solid #adb5bd;
+            border-radius: 3px;
+            margin-right: 12px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            background-image: url('../images/icon/checked.svg');
+            background-size: 12px 9px;
+            background-repeat: no-repeat;
+            width: 12px;
+            height: 9px;
+            top: 8px;
+            left: 6px;
+            z-index: 2;
+            opacity: 0;
+        }
+     
+    }  
+   
+    &__input:checked + &__label::before {
+        border-color: $dark-500;
+       
+    }
+    &__input:checked + &__label::after {
+        opacity: 1;
+    }
+    .range {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 123px; 
+        padding: 16px 0 26px
+    }
+    .range-slider {
+        padding: 0 18px 26px ;
+        order: 1;
+    }
+    .range-controls {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+    .range-label {
+        color: $silver-600;
+    }
+  
+    .js-input-from,
+    .js-input-to {
+        width: 80px;
+        height: 40px;
+        border-radius: 3px ;
+        border: 1px solid $silver-600;
+        color: $dark-500;
+        background-color: $silver-100;
+        text-align: center;
+    }
+  
+    .irs--round .irs-handle {
+        top: 28px;
+        width: 18px;
+        height: 18px;
+        border: none;
+        background-color: $green-900;
+        border-radius: 50%;
+        -webkit-box-shadow: 0 0 0 rgba(25, 129, 65, 0.808);
+        box-shadow: 0 0 0 rgba(25, 129, 65, 0.808);
+    }
+    .irs--round .irs-bar {
+        height: 2px;
+        background-color: $green-900;
+    }
+    .irs--round .irs-line {
+        height: 2px;
+    }
+    .irs--round .irs-from, .irs--round .irs-to, .irs--round .irs-single {
+        display: none;
+    }
+    .irs--round .irs-min, .irs--round .irs-max {
+        display: none;
+    }
+    .irs--round {
+        height: 0;
+    }
+  
+}  

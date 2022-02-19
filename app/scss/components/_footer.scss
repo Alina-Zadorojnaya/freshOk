@@ -17,10 +17,9 @@
 
 
     &__info {
-        column-count: 3;
-        column-gap: 74px;
+       
         transition: 0.4s;
-        @include r($xl) {
+       /* @include r($xl) {
             order: -1;
             column-count: 2;
             column-gap: 45px;
@@ -33,7 +32,7 @@
             margin: 22px auto 0;
             text-align: left;
             column-gap: 82px;
-        }
+        }*/
        
     }
 
@@ -64,8 +63,10 @@
     &__list {
         break-after: column;
         margin-bottom: 30px;
+        column-count: 3;
+        column-gap: 74px;
         @include r($xl) {
-            margin-bottom: 0;
+            column-count: 2;
         }
     }
    

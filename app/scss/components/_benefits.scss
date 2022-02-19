@@ -32,6 +32,7 @@
             font-size: 14px;
             font-weight: normal;
             letter-spacing: 0;
+            @include line-clamp(2);
         }
         &::before {
             content: '';
@@ -60,6 +61,7 @@
         font-size: 16px;
         margin-bottom: 7px;
         font-weight: 600;
+        @include line-clamp(1);
         @include r($sm) {
             font-weight: 400;
         }

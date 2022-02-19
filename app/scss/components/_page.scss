@@ -1,0 +1,53 @@
+.page {
+    padding-top: 48px;
+    .title {
+        text-align: left;
+        font-weight: bold;
+        font-size: 42px;
+        line-height: 1.2;
+        letter-spacing: 0.03em;
+        text-transform: none;
+        margin-bottom: 46px;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__inner  {
+        width: calc(100% - 330px);
+        display: inline-block;
+    }
+    .product-card__caption {
+        position: relative;
+    }
+    .product-card__pages-rating {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: absolute;
+        top: -22px;
+    }
+ 
+    .rating {
+        font-weight: bold;
+        font-size: 14px;
+        padding-right: 20px;
+        width: 38px;
+        height: 16px;
+        margin-bottom: 3px;
+        position: relative;
+        top: -3px;
+        right: 38px;
+    
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url('../images/icon/reiting-icon.svg');
+            background-image: url(../images/icon/reiting-icon.svg);
+            width: 16px;
+            height: 15px;
+            right: -2px;
+            bottom: 0px;
+        }
+    }
+}
